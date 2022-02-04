@@ -2,10 +2,8 @@
 
 ## Starting a project
 
-- Docker: Run ``docker-compose up``
-- Standard way: ``pip3 install -r requirements.txt`` then ``flask run``
-
-- App accessible through http://127.0.0.1:8000/
+- Docker: Run ``docker-compose up`` App accessible through http://127.0.0.1:8000/
+- Standard way: ``pip3 install -r requirements.txt`` then ``flask run`` App accessible through http://127.0.0.1:5000/
 
 - Running tests: ``python -m unittest test_web_scraper.py``
 
