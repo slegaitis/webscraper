@@ -1,0 +1,112 @@
+:root {
+    --white: #ffffff;
+    --primary-color: #222E50;
+    --secondary-color: #439A86;
+    --tertiary-color: #c45757;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #4C5C68;
+    font-weight: 500;
+}
+
+.transition {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 75em;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    margin: 5em auto 10em;
+    max-width: 50em;
+    justify-content: space-around;
+}
+
+input {
+    border: 0;
+    border-bottom: 2px solid var(--primary-color);
+    display: block;
+    padding: 15px 25px;
+    width: calc(100% - 9.375em)
+}
+
+input:focus {
+    border-bottom: 2px solid var(--secondary-color);
+    outline: none;
+}
+
+input:not(:placeholder-shown) {
+    border-bottom: 2px solid var(--secondary-color);
+    outline: none;
+}
+
+.flash-messages {
+    display: block;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.flash-messages li {
+    background: var(--tertiary-color);
+    color: var(--white);
+    display: block;
+    margin: 0 auto;
+    padding: 0.8em;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.btn {
+    background: var(--primary-color);
+    border: 0;
+    color: var(--white);
+    cursor: pointer;
+    width: 9.375em;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+h2 {
+    margin-bottom: 2em;
+}
+
+.results {
+    margin-bottom: 15em;
+}
+
+.results li {
+    margin-bottom: 1.5em;
+}
+
+.results .info {
+    font-weight: 500;
+    font-size: 0.85em;
+    margin-bottom: 1em;
+}

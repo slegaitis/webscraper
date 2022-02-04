@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+        <h1>Webpage Scraper</h1>
+        <form class="form" method="POST" action="{{ url_for('form_submit') }}">
+            <input type="text" name="address" id="address" class="transition" placeholder="Enter webpage address e.g https://google.com" value="{{ address }}" required pattern="^(http|HTTP)+(s|S)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._\$\(\)/]+$">
+            <button type="submit" class="btn transition">Submit</button>
+        </form>
+
+        {% if web_scraper %}
+            <h2>Scraping Results</h2>
+            <ul class="results">
+                <li>
+                    <h3>Unique Tags</h3>
+                    <p class="info">All unique tags used in the document</p>
+                    <p>{{web_scraper.unique_tags}}</p>
+                </li>
+                <li>
+                    <h3>Most Commong Tag</h3>
+                    <p class="info">Most commonly used tag</p>
+                    <p>{{web_scraper.most_common_tag}}</p>
+                </li>
+                <li>
+                    <h3>Longest path</h3>
+                    <p class="info">Longest path starting from root node to the descendent</p>
+                    <p>{{web_scraper.paths.longest_path}}</p>
+                </li>
+                <li>
+                    <h3>Longest path by common tag</h3>
+                    <p class="info">Longest path starting from root node where the most popular tag is used the most times</p>
+                    <p>{{web_scraper.paths.times_used_list}}</p>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}
