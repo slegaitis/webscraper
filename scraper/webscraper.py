@@ -42,6 +42,11 @@ class WebScraper:
         }
 
     def longest_path(self, all_tags, most_common_tag):
+        """
+            Returns a dictionary of:
+                1. longest_path: Longest path starting from root node to the descendent.
+                2. times_used_list: Longest path starting from root node where the most popular tag is used the most times
+        """
         try:
             # Remove all unnecessary tags, including <body>
             body_tags = list(dropwhile(lambda x: not x.startswith('<body'), all_tags))
@@ -50,7 +55,7 @@ class WebScraper:
             sequence = []
             path = []
             
-            # Recursively loop through the list
+            # Recursively loop through the list and create multidimensional list of nestings
             for tag in body_tags[::-1]:
                 stripped_tag = tag.split(' ')[0] + '>' if not tag.split(' ')[0].endswith('>') else tag.split(' ')[0]
                 if stripped_tag.startswith('</'):
@@ -82,6 +87,9 @@ class WebScraper:
             }
             
     def modified_tags(self, all_tags):
+        """
+            Returns all HTML tag openings used to identify unique tags and find most common tag
+        """
         tags = []
         
         try:
